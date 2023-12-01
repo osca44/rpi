@@ -1,0 +1,21 @@
+#!/bin/sh
+(
+echo "10" ; sleep 1
+echo "# starting" ; 
+echo "50" ; sleep 1 
+echo "# done lol" ;  sleep 1 
+echo "100" ; sleep 1 
+) | 
+zenity --progress \
+ --title="Sunshine and rainbows Setup Wizard Setup wizard" \
+ --text="          " \
+ --percentage=0
+
+if [ "$?" = -1 ] ; then
+            zenity --error \
+              --text=":("
+fi 
+
+wget https://raw.githubusercontent.com/osca44/s/main/alacarte-made-1.desktop
+
+
